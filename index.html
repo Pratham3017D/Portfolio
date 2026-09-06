@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pratham Rathore - Developer</title>
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #F5F1E8;
+            color: #171A17;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 22px 6vw;
+
+            background-color: rgba(245, 241, 232, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(207, 200, 185, 0.6);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 85px;
+            height: auto;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #171A17;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        ul li a:hover {
+            color: #59664A;
+        }
+
+        .nav-button {
+            background-color: #1F3328;
+            color: #F5F1E8;
+            padding: 12px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #59664A;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 6vw;
+            gap: 50px;
+        }
+
+        .hero-left {
+            width: 48%;
+        }
+
+        .small-heading {
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: #59664A;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(55px, 6vw, 95px);
+            line-height: 0.95;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #1F3328;
+        }
+
+        .hero-description {
+            max-width: 520px;
+            color: #686861;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 15px 28px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background-color: #1F3328;
+            color: #F5F1E8;
+        }
+
+        .primary-btn:hover {
+            background-color: #59664A;
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #171A17;
+            color: #171A17;
+        }
+
+        .secondary-btn:hover {
+            background-color: #1F3328;
+            color: #F5F1E8;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           HERO IMAGE
+        ========================= */
+
+        .hero-right {
+            width: 48%;
+            height: 550px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.03);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background-color: #17231C;
+            color: #F5F1E8;
+            padding: 100px 6vw;
+        }
+
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-left {
+            width: 40%;
+        }
+
+        .section-label {
+            color: #C9B98A;
+            letter-spacing: 5px;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .about h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 55px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .about-text {
+            color: #D5D2C8;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .about-button {
+            display: inline-block;
+            text-decoration: none;
+            color: #F5F1E8;
+            border: 1px solid #C9B98A;
+            padding: 13px 25px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .about-button:hover {
+            background-color: #C9B98A;
+            color: #17231C;
+        }
+
+
+        /* =========================
+           STATISTICS
+        ========================= */
+
+        .stats {
+            width: 55%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background-color: #26352A;
+            border: 1px solid #59664A;
+            padding: 45px 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: #C9B98A;
+        }
+
+        .stat-number {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 45px;
+            color: #C9B98A;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: #D5D2C8;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            padding: 100px 6vw;
+            background-color: #F5F1E8;
+        }
+
+        .skills-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .skills-heading h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 55px;
+            font-weight: 400;
+            margin-top: 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: #EAE4D7;
+            border: 1px solid #CFC8B9;
+            padding: 40px 25px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            background-color: #1F3328;
+            color: #F5F1E8;
+            transform: translateY(-8px);
+        }
+
+        .skill-card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #686861;
+            font-size: 14px;
+        }
+
+        .skill-card:hover p {
+            color: #D5D2C8;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background-color: #17231C;
+            padding: 100px 6vw;
+            color: #F5F1E8;
+        }
+
+        .projects-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 50px;
+        }
+
+        .projects-heading h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 55px;
+            font-weight: 400;
+            margin-top: 15px;
+        }
+
+        .projects-heading p {
+            color: #D5D2C8;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: #26352A;
+            border: 1px solid #59664A;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #C9B98A;
+        }
+
+        .project-image {
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .project-content p {
+            color: #D5D2C8;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #C9B98A;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            padding: 100px 6vw;
+            background-color: #F5F1E8;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 80px;
+        }
+
+        .contact-left {
+            width: 40%;
+        }
+
+        .contact-left h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 60px;
+            font-weight: 400;
+            line-height: 1;
+            margin: 20px 0;
+        }
+
+        .contact-left p {
+            color: #686861;
+            line-height: 1.7;
+        }
+
+        .contact-form {
+            width: 50%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #CFC8B9;
+            background-color: #EAE4D7;
+            border-radius: 5px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #59664A;
+        }
+
+        .form-group textarea {
+            height: 140px;
+            resize: none;
+        }
+
+        .submit-btn {
+            border: none;
+            background-color: #1F3328;
+            color: #F5F1E8;
+            padding: 15px 35px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #59664A;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #17231C;
+            color: #D5D2C8;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding-top: 50px;
+            }
+
+            .hero-left,
+            .hero-right {
+                width: 100%;
+            }
+
+            .hero-right {
+                height: 400px;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .about-left,
+            .stats {
+                width: 100%;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-heading {
+                flex-direction: column;
+                align-items: start;
+                gap: 20px;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-left,
+            .contact-form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+        <nav>
+
+            <div class="left">
+                <img class="logo" src="Images/logo2.png" alt="Pratham Logo">
+            </div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <a href="#contact" class="nav-button">
+                Let's Connect →
+            </a>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-left">
+
+            <p class="small-heading">
+                HELLO, I'M A STUDENT DEVELOPER
+            </p>
+
+            <h1>
+                I Build.<br>
+                I Learn.<br>
+                <span>I Create.</span>
+            </h1>
+
+            <p class="hero-description">
+                Passionate about technology, problem solving,
+                and building meaningful projects that make a
+                difference.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn primary-btn">
+                    View Projects →
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-right">
+
+            <img src="Images/hero.jpeg" alt="Developer workspace" class="hero-image">
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="about">
+
+        <div class="about-container">
+
+            <div class="about-left">
+
+                <p class="section-label">
+                    ABOUT ME
+                </p>
+
+                <h2>
+                    More Than<br>
+                    Just a Student
+                </h2>
+
+                <p class="about-text">
+                    I'm a curious learner who loves turning ideas
+                    into reality through code. I enjoy exploring
+                    new technologies, solving problems, and
+                    continuously improving myself.
+                </p>
+
+                <a href="#" class="about-button">
+                    Know More →
+                </a>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        05+
+                    </div>
+
+                    <p>
+                        Projects
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        03+
+                    </div>
+
+                    <p>
+                        Languages
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-number">
+                        01
+                    </div>
+
+                    <p>
+                        Big Goal
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section class="skills" id="skills">
+
+        <div class="skills-heading">
+
+            <p class="section-label">
+                WHAT I WORK WITH
+            </p>
+
+            <h2>
+                My Skills
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <h3>HTML</h3>
+
+                <p>
+                    Building clean and semantic
+                    web structures.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>CSS</h3>
+
+                <p>
+                    Creating modern and responsive
+                    interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>C++</h3>
+
+                <p>
+                    Developing logic and solving
+                    programming problems.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Git</h3>
+
+                <p>
+                    Managing code and collaborating
+                    with developers.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section class="projects" id="projects">
+
+        <div class="projects-heading">
+
+            <div>
+
+                <p class="section-label">
+                    MY WORK
+                </p>
+
+                <h2>
+                    Featured Projects
+                </h2>
+
+            </div>
+
+            <p>
+                A few things I've built while learning,
+                experimenting, and turning ideas into
+                working projects.
+            </p>
+
+        </div>
+
+
+        <div class="project-grid">
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img src="Images/project1.png" alt="Project One">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        PromptDoctor AI
+                    </h3>
+
+                    <p>
+                        My first year subject turned
+                        into An Idea, It analysis your prompt
+                        and then give you better prompt 
+                        for better answer for AI.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img src="Images/project2.png" alt="Project Two">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        AAROH
+                    </h3>
+
+                    <p>
+                        It is a student inovation system
+                        where students can collabrate,
+                        find teammates and showcase their ideas.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+
+                    <img src="Images/project3.png" alt="Project Three">
+
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Personal Portfolio
+                    </h3>
+
+                    <p>
+                        A personal portfolio showcasing
+                        my learning journey and projects.
+                    </p>
+
+                    <a href="#" class="project-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contact">
+
+        <div class="contact-container">
+
+
+            <div class="contact-left">
+
+                <p class="section-label">
+                    GET IN TOUCH
+                </p>
+
+                <h2>
+                    Let's Build
+                    Something.
+                </h2>
+
+                <p>
+                    Have an idea, opportunity, or just want
+                    to talk about technology? I'd love to hear
+                    from you.
+                </p>
+
+            </div>
+
+
+            <form class="contact-form">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input type="text" id="name" placeholder="Your name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input type="email" id="email" placeholder="Your email">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea id="message" placeholder="Your message"></textarea>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Send Message →
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Pratham Rathore. All Rights Reserved.
+
+    </footer>
+
+</body>
+
+</html>

@@ -587,6 +587,268 @@
                 width: 100%;
             }
         }
+
+
+        /* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+
+        @media (max-width: 480px) {
+
+            /* Prevent horizontal overflow */
+            html,
+            body {
+                max-width: 100%;
+            }
+
+            /* Navbar */
+            header {
+                padding: 16px 5vw;
+            }
+
+            .logo {
+                width: 75px;
+            }
+
+            .nav-button {
+                padding: 10px 14px;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            /* Hero section */
+            .hero {
+                min-height: auto;
+                padding: 55px 6vw;
+                gap: 35px;
+            }
+
+            .hero-left,
+            .hero-right {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .hero h1 {
+                font-size: clamp(44px, 12vw, 58px);
+                line-height: 1;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .hero-right {
+                height: 300px;
+            }
+
+            /* About section */
+            .about {
+                padding: 65px 6vw;
+            }
+
+            .about-container {
+                width: 100%;
+                min-width: 0;
+                align-items: stretch;
+                gap: 35px;
+            }
+
+            .about-left {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .about h2 {
+                font-size: clamp(38px, 10vw, 48px);
+            }
+
+            .section-label {
+                letter-spacing: 3px;
+                font-size: 11px;
+            }
+
+            /* FIX: Stats cards overflowing */
+            .stats {
+                width: 100%;
+                min-width: 0;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .stat-card {
+                width: 100%;
+                min-width: 0;
+                padding: 26px 4px;
+                overflow-wrap: break-word;
+            }
+
+            .stat-number {
+                font-size: clamp(24px, 8vw, 32px);
+                white-space: nowrap;
+                margin-bottom: 10px;
+            }
+
+            .stat-card p {
+                font-size: clamp(11px, 3.5vw, 14px);
+                line-height: 1.4;
+            }
+
+            /* Skills */
+            .skills,
+            .projects,
+            .contact {
+                padding: 65px 6vw;
+            }
+
+            .skills-heading h2,
+            .projects-heading h2 {
+                font-size: clamp(36px, 10vw, 46px);
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .skill-card {
+                min-width: 0;
+                padding: 25px 12px;
+            }
+
+            .skill-card h3 {
+                font-size: 22px;
+            }
+
+            /* Projects */
+            .project-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+            /* Contact */
+            .contact-container {
+                gap: 35px;
+            }
+
+            .contact-left,
+            .contact-form {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .contact-left h2 {
+                font-size: clamp(42px, 11vw, 52px);
+            }
+
+            .form-group input,
+            .form-group textarea {
+                max-width: 100%;
+            }
+        }
+
+        /* Extra-small phones */
+        @media (max-width: 340px) {
+            .stats {
+                gap: 6px;
+            }
+
+            .stat-card {
+                padding: 22px 2px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .stat-card p {
+                font-size: 11px;
+            }
+
+            .nav-button {
+                padding: 9px 10px;
+                font-size: 11px;
+            }
+        }
+
+
+        /* =========================
+   HERO IMAGE + BUTTON FIX
+========================= */
+
+        @media (max-width: 900px) {
+            .hero-right {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 4 / 5;
+                overflow: hidden;
+            }
+
+            .hero-image {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .hero-buttons {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                min-width: 0;
+                padding: 14px 8px;
+                text-align: center;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 340px) {
+            .hero-buttons {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-buttons .btn {
+                width: fit-content;
+                max-width: 100%;
+            }
+        }
+
+
+        /* Desktop: Large portrait, no cropping */
+        @media (min-width: 901px) {
+            .hero-right {
+                width: 48%;
+                height: auto;
+                aspect-ratio: auto;
+                overflow: visible;
+                flex-shrink: 0;
+            }
+
+            .hero-image {
+                display: block;
+                width: 100%;
+                height: auto;
+                aspect-ratio: auto;
+                object-fit: unset;
+                object-position: center;
+                border-radius: 4px;
+            }
+        }
     </style>
 </head>
 
@@ -872,11 +1134,12 @@
                     <p>
                         My first year subject turned
                         into An Idea, It analysis your prompt
-                        and then give you better prompt 
+                        and then give you better prompt
                         for better answer for AI.
                     </p>
 
-                    <a href="https://prompt-doctor-ai.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://prompt-doctor-ai.vercel.app/" class="project-link" target="_blank"
+                        rel="noopener noreferrer">
                         View Project →
                     </a>
 
@@ -975,46 +1238,22 @@
             </div>
 
 
-            <form
-                class="contact-form"
-                action="https://api.web3forms.com/submit"
-                method="POST"
-            >
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
                 <!-- Web3Forms Access Key -->
-                <input
-                    type="hidden"
-                    name="access_key"
-                    value="5b19b03f-4b70-4f49-b6ba-4845e27bf1eb"
-                >
+                <input type="hidden" name="access_key" value="5b19b03f-4b70-4f49-b6ba-4845e27bf1eb">
 
                 <!-- Email subject -->
-                <input
-                    type="hidden"
-                    name="subject"
-                    value="New Message from Pratham's Portfolio"
-                >
+                <input type="hidden" name="subject" value="New Message from Pratham's Portfolio">
 
                 <!-- Sender name shown in email -->
-                <input
-                    type="hidden"
-                    name="from_name"
-                    value="Pratham's Portfolio"
-                >
+                <input type="hidden" name="from_name" value="Pratham's Portfolio">
 
                 <!-- Return visitor to Contact section after submission -->
-                <input
-                    type="hidden"
-                    name="redirect"
-                    value="https://pratham3017d.github.io/Portfolio/#contact"
-                >
+                <input type="hidden" name="redirect" value="https://pratham3017d.github.io/Portfolio/#contact">
 
                 <!-- Spam protection -->
-                <input
-                    type="checkbox"
-                    name="botcheck"
-                    style="display: none;"
-                >
+                <input type="checkbox" name="botcheck" style="display: none;">
 
                 <div class="form-group">
 
@@ -1022,13 +1261,7 @@
                         Name
                     </label>
 
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Your name"
-                        required
-                    >
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
 
                 </div>
 
@@ -1039,13 +1272,7 @@
                         Email
                     </label>
 
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Your email"
-                        required
-                    >
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
 
                 </div>
 
@@ -1056,12 +1283,7 @@
                         Message
                     </label>
 
-                    <textarea
-                        id="message"
-                        name="message"
-                        placeholder="Your message"
-                        required
-                    ></textarea>
+                    <textarea id="message" name="message" placeholder="Your message" required></textarea>
 
                 </div>
 
